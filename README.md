@@ -7,7 +7,7 @@ The beauty of that is that the string and the alphabet can be anything you can c
 
 All you need is a fold over the data structure and comparison operators for your alphabet (equality for character comparisons, &lt; and &gt; for range matching.) And, as you likely don't want to write regexp AST by hand, a parser for expressions in your alphabet might be helpful.
 
-`regex.ml` contains parsers for regular expressions of chars, ints and floats, and a simple polymorphic NFA-interpreting regexp engine for running the regexps. The `execute_nfa nfa getter str` is the workhorse function for the engine, it takes the parsed regexp `nfa`, a getter function such that `getter i str` returns that `i`th element of `str`, and the data structure `str` to match against.
+`regex.ml` contains parsers for regular expressions of chars, ints and floats, and a simple polymorphic NFA-interpreting regexp engine for running the regexps. The `execute_nfa nfa getter` is the workhorse function for the engine, it takes the parsed regexp `nfa`, a getter function such that `getter i` returns that `i`th element of the data structure to match against.
 
 It works on strings!
 ```
